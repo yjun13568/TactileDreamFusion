@@ -77,7 +77,7 @@ class Renderer(nn.Module):
         self.mesh = Mesh.load(self.opt.mesh, resize=False, opt=self.opt)
         self.device = self.mesh.v.device
         print(f"Loaded mesh from {self.opt.mesh} N_v {len(self.mesh.v)} N_f {len(self.mesh.f)}") # N_v 19882 N_f 35972
-        self.glctx = dr.RasterizeGLContext()
+        self.glctx = dr.RasterizeCudaContext()
         
         # create a field to represent albedo and tactile texture
         self.texture_field = NeuralStyleField(

@@ -70,7 +70,7 @@ class GUI:
         else:
             raise ValueError(f'[ERROR] mode {opt.mode} not supported')
             
-        self.glctx = dr.RasterizeGLContext()
+        self.glctx = dr.RasterizeCudaContext()
 
 
     def step(self):
